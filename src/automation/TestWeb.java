@@ -12,38 +12,35 @@ public class TestWeb {
     private static WebDriver driver;
 
     public static void main(String[] args) {
-        driver = ChromeDriver();
+        driver = chromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         Home home = new Home(driver);
-        home.Navigate();
-        home.TakeAndSkipTou();
-        home.SelectCurrrency("US Dollars");
-        home.ProceedToSignUp();
+        home.navigate();
+        home.takeAndSkipTour();
+        home.selectCurrency("US Dollars");
+        home.proceedToSignUp();
 
         ClientRegistration register = new ClientRegistration(driver);
 
-        String email = "TestWeb"+ GetRandomInt() + "@test.com";
-        String username = "TestWebName"+ GetRandomInt();
-        String password = "TestWebPassword"+ GetRandomInt();
+        String email = "AutomatedEngenier"+ getRandomInt() + "@test.com";
+        String username = "TestUsername";
+        String password = "TestWebPassword"+ getRandomInt();
 
-        register.SignUp(email, username, "919876543", password);
-        //POM structure
+        register.signUp(email, username, "919876543", password);
 
-        home.ConfirmRegist(username);
-
-        home.gotoHomePage("www.google.pt");
+        home.confirmRegist(username);
 
         driver.close();
     }
 
-    private static Integer GetRandomInt(){
+    private static Integer getRandomInt(){
         Random rand = new Random();
-        return rand.nextInt(1000);
+        return rand.nextInt(100000);
     }
 
-    private static WebDriver ChromeDriver() {
+    private static WebDriver chromeDriver() {
         WebDriver driver;
         System.setProperty("webdriver.chrome.driver", ".\\drivers\\chromedriver.exe");
         driver = new ChromeDriver();

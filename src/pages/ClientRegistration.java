@@ -17,7 +17,7 @@ public class ClientRegistration {
         this.driver = driver;
     }
 
-    public void SignUp(String email, String username, String phoneNumber, String password){
+    public void signUp(String email, String username, String phoneNumber, String password){
         driver.findElement(emailSet).sendKeys(email);
         driver.findElement(signUpNextButton).click();
 
