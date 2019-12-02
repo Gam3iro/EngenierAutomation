@@ -27,7 +27,7 @@ public class Home {
         driver.get("https://staging.engineer.ai");
     }
 
-    public void TakeAndSkipTou(){
+    public void TakeAndSkipTour(){
         new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(takeTourButton)).click();
         new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(skipTourButton)).click();
     }

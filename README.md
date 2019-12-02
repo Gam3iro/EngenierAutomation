@@ -8,16 +8,16 @@
         home.TakeAndSkipTour();
 - Select the currency and go to register page  
               
-        home.SelectCurrency("US Dollars");
-        home.GoToRegister();
+        home.SelectCurrrency("US Dollars");
+        home.ProceedToSignUp();
  
 - Create the new user on the register page
 
-        register.SignUpAndRegister(email, username, "+351912345678", password);
+        register.SignUp(email, username, phoneNumber, password);
         
 - Then we validate the user created        
 
-        home.ValidateRegister(username);
+        home.ConfirmRegist(username);
         
         
         
